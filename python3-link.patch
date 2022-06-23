@@ -3,7 +3,7 @@ diff -ur a/Lib/cgi.py b/Lib/cgi.py
 +++ b/Lib/cgi.py	2022-06-23 04:50:40.314682952 -0400
 @@ -1,4 +1,4 @@
 -#! /usr/local/bin/python
-+#! /usr/bin/python3
++#! /usr/bin/env python3
  
  # NOTE: the above "/usr/local/bin/python" is NOT a mistake.  It is
  # intentionally NOT "/usr/bin/env python".  On many systems
