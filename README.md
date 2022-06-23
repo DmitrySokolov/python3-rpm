@@ -3,25 +3,35 @@
 Scripts for creating RPM Python 3 package for CentOS 7
 
 
-1. Update
+1. Update and install required packages
 
 ```bash
-sudo yum update -y
+sudo yum -y update
 sudo reboot
+
+sudo yum install -y yum-utils rpmdevtools rpmlint
+sudo yum-builddep -y python3
 ```
 
-2. Build
+2. Clone the repository
 
 ```bash
-python3-build.sh
+git clone https://github.com/DmitrySokolov/python3-rpm.git py3
+cd ./py3
+```
+
+3. Build
+
+```bash
+bash python3-build.sh
 ```
 
 Python 3 will be `altinstall`-ed to `/opt/python`
 
-3. Create .rpm
+4. Create .rpm
 
 ```bash
-python3-pack.sh
+bash python3-pack.sh
 ```
 
 .rpm will be created in `~/rpmbuild/RPMS/x86_64/`
@@ -31,5 +41,5 @@ python3-pack.sh
 To install created .rpm
 
 ```bash
-python3-install-rpm.sh
+bash python3-install-rpm.sh
 ```
